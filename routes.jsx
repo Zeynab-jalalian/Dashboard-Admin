@@ -5,24 +5,12 @@ import Users from "./src/pages/Users/page";
 import Tickets from "./src/pages/Tickets/page";
 import TicketDetails from "./src/pages/TicketDetails/page";
 import Comments from "./src/pages/Comments/page";
-import clsx from "clsx";
-const isOpen = true;
+import DashboardLayout from "./src/components/layouts/DashboardLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div
-        className={clsx(
-          "text-center",
-          "p-4",
-          isOpen ? "bg-green-200" : "bg-red-200",
-        )}
-      >
-        Application Layout
-        <Outlet />
-      </div>
-    ),
+    element: <DashboardLayout />,
     children: [
       {
         index: true,
