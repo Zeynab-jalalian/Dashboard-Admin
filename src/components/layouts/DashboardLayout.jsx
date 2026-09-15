@@ -1,13 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router";
 import Sidebar from "../../features/Sidebar/Sidebar";
+import Topbar from "../../features/Topbar/Topbar";
 
 function DashboardLayout() {
   return (
     <main id="root" className="flex">
       <Sidebar />
       <section className="grow *:px-6">
-        {/* <Topbar /> */}
+        <Topbar />
         <div id="content" className="mt-6 mx-auto container">
           <div className="relative z-10">
             <Outlet />
