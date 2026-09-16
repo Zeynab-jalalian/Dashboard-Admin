@@ -4,7 +4,7 @@ import { RiAdminFill } from "react-icons/ri";
 
 const generateSummaries = ({
   productsLength = 0,
-  usesrsLength = 0,
+  usersLength = 0,
   ticketsLength = 0,
   adminsLength = 0,
 }) => {
@@ -18,7 +18,7 @@ const generateSummaries = ({
     {
       id: 2,
       title: "تعداد کاربران",
-      value: usesrsLength,
+      value: usersLength,
       icon: HiUsers,
     },
     {
@@ -35,5 +35,17 @@ const generateSummaries = ({
     },
   ];
 };
-
-export { generateSummaries };
+const generateData = ({
+  productsLength,
+  usersLength,
+  ticketsLength,
+  adminsLength,
+}) => {
+  return [
+    { name: "تعداد محصولات", value: productsLength },
+    { name: "تعداد کاربران", value: usersLength },
+    { name: "تعداد مدیران", value: adminsLength },
+    { name: "تعداد تیکت‌ها", value: ticketsLength },
+  ];
+};
+export { generateSummaries, generateData };
