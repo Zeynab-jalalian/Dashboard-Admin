@@ -48,4 +48,5 @@ const generateData = ({
     { name: "تعداد تیکت‌ها", value: ticketsLength },
   ];
 };
+
 export { generateSummaries, generateData };
