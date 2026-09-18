@@ -1,6 +1,10 @@
 import React from "react";
 
 function ModalFooter({ onClose, onSubmit }) {
+  const submitHandler = () => {
+    onSubmit();
+    onClose();
+  };
   return (
     <div className="text-sm text-[#666D80] select-none flex gap-2 items-center">
       <button
@@ -10,7 +14,7 @@ function ModalFooter({ onClose, onSubmit }) {
         <span>انصراف</span>
       </button>
       <button
-        onClick={onSubmit}
+        onClick={submitHandler}
         className="flex items-center gap-1 cursor-pointer primary-bg px-4 py-2 rounded-lg border primary-border-color"
       >
         <span>تایید</span>
