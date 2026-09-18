@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Table from "../../components/common/Table/Table";
 import { Link } from "react-router";
 import { MdOpenInNew } from "react-icons/md";
@@ -13,6 +13,7 @@ import ChangeVisibilityIcon from "../../features/LastProductTable/Components/Cha
 import EditProductIcon from "../../features/LastProductTable/Components/EditProductIcon";
 import clsx from "clsx";
 function LastProductTable() {
+  const [lastProducts, setLastProducts] = useState([...products]);
   const Buttons = () => {
     return (
       <Link
@@ -24,6 +25,10 @@ function LastProductTable() {
       </Link>
     );
   };
+  const removeProduct = (id) => {
+    const newProducts = lastProducts.filter((product) => product.id !== id);
+    setLastProducts(newProducts);
+  };
   return (
     <div>
       <Table header={{ title: "لیست محصولات", Buttons: Buttons }}>
@@ -33,7 +38,7 @@ function LastProductTable() {
           })}
         </TableHead>
         <TableBody>
-          {products.map((product) => {
+          {lastProducts.map((product) => {
             return (
               <TableRow key={product.id}>
                 <TableCell>{product.id.slice(0, 10)}...</TableCell>
@@ -53,9 +58,18 @@ function LastProductTable() {
                 </TableCell>
                 <TableCell>
                   <div className="flex items-center gap-2">
-                    <RemoveProductIcon />
-                    <ChangeVisibilityIcon />
-                    <EditProductIcon />
+                    <RemoveProductIcon
+                      product={product}
+                      handler={removeProduct}
+                    />
+                    <ChangeVisibilityIcon
+                      product={product}
+                      handler={removeProduct}
+                    />
+                    <EditProductIcon
+                      product={product}
+                      handler={removeProduct}
+                    />
                   </div>
                 </TableCell>
               </TableRow>
