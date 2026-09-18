@@ -10,7 +10,7 @@ function RemoveProductIcon() {
     );
   };
 
-  return <Modal Trigger={Trigger} />;
+  return <Modal title="حذف محصول" Trigger={Trigger} />;
 }
 
 export default RemoveProductIcon;

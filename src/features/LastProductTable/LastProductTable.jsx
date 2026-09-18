@@ -52,7 +52,7 @@ function LastProductTable() {
                   <span>{product.price.toLocaleString("fa-IR")} تومان</span>
                 </TableCell>
                 <TableCell>
-                  <div>
+                  <div className="flex items-center gap-2">
                     <RemoveProductIcon />
                     <ChangeVisibilityIcon />
                     <EditProductIcon />
