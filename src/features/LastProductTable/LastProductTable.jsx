@@ -8,6 +8,9 @@ import { products, productsTableHeadRow } from "../../data/products";
 import TableBody from "../../components/common/Table/elements/TableBody";
 import TableRow from "../../components/common/Table/elements/TableRow";
 import TableCell from "../../components/common/Table/elements/TableCell";
+import RemoveProductIcon from "../../features/LastProductTable/Components/RemoveProductIcon";
+import ChangeVisibilityIcon from "../../features/LastProductTable/Components/ChangeVisibilityIcon";
+import EditProductIcon from "../../features/LastProductTable/Components/EditProductIcon";
 import clsx from "clsx";
 function LastProductTable() {
   const Buttons = () => {
@@ -48,7 +51,13 @@ function LastProductTable() {
                 <TableCell>
                   <span>{product.price.toLocaleString("fa-IR")} تومان</span>
                 </TableCell>
-                <TableCell>عملیات</TableCell>
+                <TableCell>
+                  <div>
+                    <RemoveProductIcon />
+                    <ChangeVisibilityIcon />
+                    <EditProductIcon />
+                  </div>
+                </TableCell>
               </TableRow>
             );
           })}
